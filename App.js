@@ -16,10 +16,14 @@ export default function App() {
     setCourseGoal(currentGoal => [...courseGoal, enteredGoal])
     setaddMode(false)
   }
+
+  const cancelGoal = () => {
+    setaddMode(false)
+  }
   return (
     <View style={styles.main}>
         <Button title="add new goal" onPress={() => setaddMode(true)}/>
-        <GoalInput visible={addMode} onAddGoal={addGoalHandler} />
+        <GoalInput visible={addMode} onAddGoal={addGoalHandler} cancelGoal={cancelGoal}/>
         <FlatList 
           data={courseGoal}
           renderItem={itemData => 
