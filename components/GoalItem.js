@@ -2,13 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native'
 
 const GoalItem = props => {
-    const deleteItem = () => {
-        console.log(props.title)
-    }
     return(
         <View style={styles.listItem}>
             <Text>{props.title}</Text>
-            <Button title="delete" onPress={deleteItem()}/>
+            <Button title="delete" onPress={() => props.deleteItem(props.title)}/>
         </View> 
     )
 };
